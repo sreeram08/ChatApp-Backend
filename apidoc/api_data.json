@@ -1,0 +1,837 @@
+[
+  {
+    "group": "ChatGroup",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/:chatRoomId/closeGroup",
+    "title": "to close the chat group from the Group chat application.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chatRoomId",
+            "description": "<p>GroupId of the group which will be marked as closed. (route params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Group found & marked close\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"nModified\": 1,\n        \"ok\": 1\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n            }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "ChatGroup",
+    "name": "GetApiV1UsersChatroomidClosegroup"
+  },
+  {
+    "group": "ChatGroup",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/:chatRoomId/getChatRoom",
+    "title": "to get  the chat group of the Group chat application.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chatRoomId",
+            "description": "<p>GroupId of the group whoose details will be returned. (route params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Group found\",\n    \"status\": 200,\n    \"data\": {\n        \"_id\": \"5b542d11eda72f35e06cc5ce\",\n        \"admin\": {\n            \"name\": \"KrishnaPatil\",\n            \"Id\": \"SJNYFW8Q7\"\n        },\n        \"__v\": 0,\n        \"status\": true,\n        \"members\": [\n            {\n                \"name\": \"KrishnaPatil\",\n                \"Id\": \"SJNYFW8Q7\"\n            }\n        ],\n        \"createdOn\": \"2018-07-22T07:06:57.000Z\",\n        \"roomName\": \"First Group by new user\",\n        \"roomId\": \"H1tfajbNX\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n            }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "ChatGroup",
+    "name": "GetApiV1UsersChatroomidGetchatroom"
+  },
+  {
+    "group": "ChatGroup",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/getChatRooms",
+    "title": "to get all the chat groups of the Group chat application.",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Groups found\",\n    \"status\": 200,\n    \"data\": [\n        {\n            \"_id\": \"5b48821d512db705b021fa7e\",\n            \"admin\": {\n                \"name\": \"HanumantPatil\",\n                \"Id\": \"H1_zVTeXX\"\n            },\n            \"__v\": 0,\n            \"status\": true,\n            \"members\": [\n                {\n                    \"name\": \"HanumantPatil\",\n                    \"Id\": \"H1_zVTeXX\"\n                },\n                {\n                    \"Id\": \"SJNYFW8Q7\",\n                    \"name\": \"Krishna Patil\"\n                }\n            ],\n            \"createdOn\": \"2018-07-13T10:42:37.000Z\",\n            \"roomName\": \"First Group\",\n            \"roomId\": \"ryLQMWImm\"\n        }\n    ]\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n            }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "ChatGroup",
+    "name": "GetApiV1UsersGetchatrooms"
+  },
+  {
+    "group": "ChatGroup",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/:chatRoomId/editChatRoom",
+    "title": "to edit Chat Group.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chatRoomId",
+            "description": "<p>GroupId of the group to be edited. (route params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "roomName",
+            "description": "<p>New Name of the group. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"chatRoom edited\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"nModified\": 1,\n        \"ok\": 1\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n      }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "ChatGroup",
+    "name": "PostApiV1UsersChatroomidEditchatroom"
+  },
+  {
+    "group": "ChatGroup",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/createChatRoom",
+    "title": "to create Chat Group.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userEmail",
+            "description": "<p>email of the user creating chat group. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "roomName",
+            "description": "<p>Name of the group to be created. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"room saved to user details\",\n    \"status\": 200,\n    \"data\": {\n        \"__v\": 0,\n        \"admin\": {\n            \"Id\": \"Sy-pfEQNX\",\n            \"name\": \"HanumantPatil\"\n        },\n        \"_id\": \"5b55b7043378f63094cb05fc\",\n        \"status\": true,\n        \"members\": [\n            {\n                \"Id\": \"Sy-pfEQNX\",\n                \"name\": \"HanumantPatil\"\n            }\n        ],\n        \"createdOn\": \"2018-07-23T11:07:47.000Z\",\n        \"roomName\": \"First Group by new user\",\n        \"roomId\": \"SyoWPNXV7\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n          }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "ChatGroup",
+    "name": "PostApiV1UsersCreatechatroom"
+  },
+  {
+    "group": "ChatGroup",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/joinChatRoom",
+    "title": "to join Chat Group.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userEmail",
+            "description": "<p>email of the user joining chat group. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chatRoomId",
+            "description": "<p>GroupId of the group to be Joined. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"User & Group Saved\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"nModified\": 1,\n        \"ok\": 1\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n            }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "ChatGroup",
+    "name": "PostApiV1UsersJoinchatroom"
+  },
+  {
+    "group": "ChatGroup",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/sendInvite",
+    "title": "to send an invite to other user to join Chat Group.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chatRoomId",
+            "description": "<p>GroupId of the group to be whoose invite will be sent. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userEmail",
+            "description": "<p>email of the user whom invite is to sent. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n    \"error\": false,\n    \"message\": \"Mail sent Successfully\",\n    \"status\": 200,\n    \"data\": null\n\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n            }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "ChatGroup",
+    "name": "PostApiV1UsersSendinvite"
+  },
+  {
+    "group": "ChatGroup",
+    "version": "1.0.0",
+    "type": "put",
+    "url": "/api/v1/users/deleteChatRoom",
+    "title": "to delete Chat Group.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chatRoomId",
+            "description": "<p>GroupId of the group to be deleted. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": true,\n    \"message\": \"Chat Room deleted\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 1,\n        \"ok\": 1\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n            }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "ChatGroup",
+    "name": "PutApiV1UsersDeletechatroom"
+  },
+  {
+    "group": "chat",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/getGroupChat",
+    "title": "to get the group chat.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chatRoomId",
+            "description": "<p>Roorm Id of the chat group. (query params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "skip",
+            "description": "<p>page value of group chat. (query params) (optional)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"All Group Chats Listed\",\n    \"status\": 200,\n    \"data\": [\n        {\n            \"chatId\": \"S1SjOhOXQ\",\n            \"createdOn\": \"2018-07-15T12:05:49.077Z\",\n            \"seen\": false,\n            \"chatRoom\": false,\n            \"message\": \"Hello in another group\",\n            \"senderId\": \"H1_zVTeXX\",\n            \"senderName\": \"Hanumant Patil\"\n        },\n        {\n            \"chatId\": \"rk43d3dQm\",\n            \"createdOn\": \"2018-07-15T12:06:03.899Z\",\n            \"seen\": false,\n            \"chatRoom\": false,\n            \"message\": \"Hi in another group\",\n            \"senderId\": \"SJNYFW8Q7\",\n            \"senderName\": \"Krishna Patil\"\n        }\n    ]\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n               \"error\": true,\n               \"message\": string,\n               \"status\": number,\n               \"data\": any\n           }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "chat",
+    "name": "GetApiV1UsersGetgroupchat"
+  },
+  {
+    "group": "user",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/:userEmail/getUser",
+    "title": "to get all details about the user.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userEmail",
+            "description": "<p>email of user whoose details will be returned. (route params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"User found\",\n    \"status\": 200,\n    \"data\": \n        {\n            \"_id\": \"5b43440f9063530f6437fcc4\",\n            \"__v\": 0,\n            \"groups\": [\n                \"ryLQMWImm\",\n                \"rJXdG-8m7\"\n            ],\n            \"createdOn\": \"2018-07-09T11:16:31.000Z\",\n            \"mobileNumber\": 8920014205,\n            \"email\": \"hanmantchidrawar@gmail.com\",\n            \"password\": \"$2a$10$q0jdVsSlhOQ.fOArQNRsqeuTOHYql.eEL9GsV6BoQVbFcSpa.8PwO\",\n            \"lastName\": \"Patil\",\n            \"firstName\": \"Hanumant\",\n            \"userId\": \"H1_zVTeXX\"\n        }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n            }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "user",
+    "name": "GetApiV1UsersUseremailGetuser"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "get",
+    "url": "/api/v1/users/:userEmail/forgotPassword",
+    "title": "to send an reset email to user.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userEmail",
+            "description": "<p>Email of the user. (route params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"User Details Found\",\n    \"status\": 200,\n    \"data\": \"Mail sent successfully\"\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n               \"error\": true,\n               \"message\": string,\n               \"status\": number,\n               \"data\": any\n           }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "GetApiV1UsersUseremailForgotpassword"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/login",
+    "title": "api for user login.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"status\": 200,\n    \"data\": {\n        \"authToken\": \"eyJhbGciOiJIUertyuiopojhgfdwertyuVCJ9.MCwiZXhwIjoxNTIwNDI29tIiwibGFzdE5hbWUiE4In19.hAR744xIY9K53JWm1rQ2mc\",\n        \"userDetails\": {\n        \"mobileNumber\": 2234435524,\n        \"email\": \"someone@mail.com\",\n        \"lastName\": \"abc\",\n        \"firstName\": \"xyz\",\n        \"userId\": \"-E9zxTYA8\"\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n               \"error\": true,\n               \"message\": string,\n               \"status\": number,\n               \"data\": any\n           }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersLogin"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/resetPassword",
+    "title": "to change the password of user.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>Id of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>New password of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": false,\n    \"message\": \"Mail sent Successfully\",\n    \"status\": 200,\n    \"data\": \"Password reset successfull\"\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n               \"error\": true,\n               \"message\": string,\n               \"status\": number,\n               \"data\": any\n           }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersResetpassword"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/signup",
+    "title": "api for user SignUp.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>First Name of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>Last Name of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password of the user. (body params) (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "mobileNumber",
+            "description": "<p>Mobile Number of the user. (body params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n     \"error\": \"false\",\n     \"message\": \"User Created\",\n     \"status\": 200,\n     \"data\": {\n         \"__v\": 0,\n         \"_id\": \"5b55b2b93378f63094cb05fb\",\n         \"groups\": [],\n         \"createdOn\": \"2018-07-23T10:49:29.000Z\",\n         \"mobileNumber\": 8920014205,\n         \"email\": \"hanumantchidrawar@gmail.com\",\n         \"lastName\": \"Patil\",\n         \"firstName\": \"Hanumant\",\n         \"userId\": \"Sy-pfEQNX\"\n     }\n }",
+          "type": "object"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersSignup"
+  },
+  {
+    "group": "users",
+    "version": "1.0.0",
+    "type": "post",
+    "url": "/api/v1/users/:userId/logout",
+    "title": "to logout user.",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>userId of the user. (route params) (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "myResponse",
+            "description": "<p>shows error status, message, http status code, result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"error\": true,\n    \"message\": \"User logged Out\",\n    \"status\": 200,\n    \"data\": {\n        \"n\": 0,\n        \"ok\": 1\n    }\n}",
+          "type": "object"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n                \"error\": true,\n                \"message\": string,\n                \"status\": number,\n                \"data\": any\n            }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/routes/user.js",
+    "groupTitle": "users",
+    "name": "PostApiV1UsersUseridLogout"
+  }
+]
